@@ -24,7 +24,7 @@ jobs:
     - name: Run 01_caesar_cipher.py
       run: |
         echo "Running 01_caesar_cipher.py..."
-        python3 CaesarCipher/01_caesar_cipher.py
+        python3 CaesarCipher/01_caesar_cipher.py enc 3 "Hello, World!"
 
     - name: Run 02_breaking_caesar.py
       run: |
