@@ -1,0 +1,37 @@
+name: Caesar Cipher
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  run-scripts:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+
+    - name: Run 01_caesar_cipher.py
+      run: |
+        echo "Running 01_caesar_cipher.py..."
+        python3 CaesarCipher/01_caesar_cipher.py
+
+    - name: Run 02_breaking_caesar.py
+      run: |
+        echo "Running 02_breaking_caesar.py..."
+        python3 CaesarCipher/02_breaking_caesar.py
+
+    - name: Run 03_double_caesar_cipher.py
+      run: |
+        echo "Running 03_double_caesar_cipher.py..."
+        python3 CaesarCipher/03_double_caesar_cipher.py
